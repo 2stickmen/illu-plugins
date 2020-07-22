@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.powerskiller;
+package net.runelite.client.plugins.powerskillerPlus;
 
 import java.time.Instant;
 import java.util.function.Consumer;
@@ -35,8 +35,8 @@ import net.runelite.client.config.ConfigTitleSection;
 import net.runelite.client.config.Range;
 import net.runelite.client.config.Title;
 
-@ConfigGroup("PowerSkiller")
-public interface PowerSkillerConfiguration extends Config
+@ConfigGroup("PowerSkillerPlus")
+public interface PowerSkillerPlusConfiguration extends Config
 {
 
 	@ConfigSection(
@@ -272,14 +272,14 @@ public interface PowerSkillerConfiguration extends Config
 	}
 
 	@ConfigItem(
-		keyName = "dropInventory",
-		name = "Drop entire inventory",
-		description = "Enable to drop your entire inventory",
+		keyName = "itemInteraction",
+		name = "Item to click with",
+		description = "Use this item on everything else",
 		position = 90
 	)
-	default boolean dropInventory()
+	default string itemInteraction()
 	{
-		return false;
+		return "";
 	}
 
 	@ConfigItem(
